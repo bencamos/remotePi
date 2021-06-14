@@ -3,6 +3,7 @@ void loadPage() {
         String requested = server.uri();
         File f = SPIFFS.open("isencrypted", "r");
         if (f && f.size()) {
+                // This was intended to encrypt all data on the esp to prevent reading but was never completed.
                 String appfile;
                 while (f.available()) {
                         appfile += char(f.read());
@@ -48,7 +49,7 @@ void loadPage() {
                         sendText("<h3 style='color:#8502f7;'>Connection Failed. </h3>");
                 }
         } else if (requested.equals("/ping")) {
-
+                // "192.168.4.2" Is most likely the rasp Pi
                 IPAddress ip (192, 168, 4, 2);
                 bool ret = Ping.ping(ip);
                 if (ret) {
@@ -57,12 +58,14 @@ void loadPage() {
                         sendText("<h3 style='color:#8502f7;'>Offline </h3>");
                 }
         } else if (requested.equals("/fileWrite")) {
+                // Write file to disk
                 Serial.print(server.arg("file") + server.arg("data"));
                 SPIFFS.remove(server.arg("file"));
                 File file = SPIFFS.open(server.arg("file"), "w");
                 int bytesWritten = file.print(server.arg("data"));
                 server.send(200, texttype, "<meta http-equiv='refresh' content='0.25; URL=/files' />\nAttempting to process your request: " + server.arg("file") + server.arg("data"));
         } else if (requested.equals("/fileeditor")) {
+                // Interactive file editor
                 String requested = server.arg("file");
                 if (SPIFFS.exists(requested)) {
                         File f = SPIFFS.open(requested, "r");
@@ -90,6 +93,7 @@ void loadPage() {
                         server.send(404, texttype, "<h3 style='color:#8502f7;'>" + requested + " Dosen't exist.<br>SPIFFS Reports: " + SPIFFS.exists(requested) + "<br>Files:<br>" + fileList + "</h3>");
                 }
         } else if (requested.equals("/fileviewer")) {
+                // Interactive file viewer
                 String requested = server.arg("file");
                 if (SPIFFS.exists(requested)) {
                         File f = SPIFFS.open(requested, "r");
@@ -110,6 +114,7 @@ void loadPage() {
                         server.send(404, texttype, "<h3 style='color:#8502f7;'>" + requested + " Dosen't exist.<br>SPIFFS Reports: " + SPIFFS.exists(requested) + "<br>Files:<br>" + fileList + "</h3>");
                 }
         } else if (requested.equals("/files")) {
+                // Listing files
                 String fileList;
                 float totalFileSize;
                 Dir dir = SPIFFS.openDir("");
@@ -124,6 +129,7 @@ void loadPage() {
                 server.send(200, texttype, "<meta http-equiv='refresh' content='0.25; URL=/files.html' />\nAttempting to delete:" + server.arg("File"));
         } else if (requested.equals("/executeCommand")) {
           if (client.connect("192.168.4.2", 48567)) {
+            // Connecting to rasp Pi socket and sending the "command"
             client.print(server.arg("command"));
             String response = client.readString();
             sendText("<h3 style='color:#8502f7;'>" + response + " </h3>");
@@ -132,6 +138,7 @@ void loadPage() {
                   sendText("<h3 style='color:#8502f7;'>Connection Failed. </h3>");
           }
         } else if (requested.equals("/setnetwork")) {
+                // Setting new network details
                 SPIFFS.remove(server.arg("/hostNetwork.config"));
                 File file = SPIFFS.open("/hostNetwork.config", "w");
                 int bytesWritten = file.print(server.arg("ssid") + ":" + server.arg("pass"));

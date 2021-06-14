@@ -55,7 +55,7 @@ void setup() {
                                         if (WiFi.status() == WL_CONNECTED) {
                                                 Serial.print("Connected, IP address: ");
                                                 Serial.println(WiFi.localIP());
-                                                WiFi.hostname("hacker.pi");
+                                                WiFi.hostname("remote.pi");
                                                 break;
                                         }
                                         int ex = 0;
@@ -67,7 +67,7 @@ void setup() {
                         }
                 }
         }
-        if (!MDNS.begin("hackerpi")) {
+        if (!MDNS.begin("remotepi")) {
           Serial.println("Error setting up DNS responder!");
           while (1) {
             delay(1000);

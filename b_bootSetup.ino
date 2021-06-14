@@ -11,6 +11,8 @@ void setup() {
         }
         MDNS.addService("http", "tcp", 80);
         if (SPIFFS.exists("/hostNetwork.config")) {
+                // Create a new network using the details inside "hostNetwork.config"
+                // The user connects to this network to properly access the server.
                 Serial.println("Primary network configuration file detected.\n");
                 File f = SPIFFS.open("/hostNetwork.config", "r");
                 if (f && f.size()) {
@@ -30,6 +32,7 @@ void setup() {
                 }
         }
         if (SPIFFS.exists("/clientNetwork.config")) {
+                // Used to connect to a second network usually to get internet connection but will work the same in the network as if it was its own.
                 Serial.println("Secondary network configuration file detected.\n");
                 File f = SPIFFS.open("/clientNetwork.config", "r");
                 if (f && f.size()) {

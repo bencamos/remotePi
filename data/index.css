@@ -1,0 +1,421 @@
+*,::after,::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+aside,main,nav {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #000;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul ul {
+  margin-bottom: 0;
+}
+
+b,strong {
+  font-weight: bolder;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.h1,h1 {
+  font-size: 2.5rem;
+}
+
+.h3,h3 {
+  font-size: 1.75rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters>.col,.no-gutters>[class*=col-] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xxl,.col-xxl-1,.col-xxl-10,.col-xxl-11,.col-xxl-12,.col-xxl-2,.col-xxl-3,.col-xxl-4,.col-xxl-5,.col-xxl-6,.col-xxl-7,.col-xxl-8,.col-xxl-9,.col-xxl-auto {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-sm-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-xxl-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.fade {
+  transition: opacity .15s linear;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #000;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+}
+
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.alert-primary {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-sm-flex {
+  display: flex !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+@media (min-width:667px) {
+  .text-sm-right {
+    text-align: right !important;
+  }
+
+  .font-weight-bold {
+    font-weight: 700 !important;
+  }
+
+  .text-muted {
+    color: #6c757d !important;
+  }
+
+  .bg-gradient {
+    background: #8502f7;
+    background: -moz-linear-gradient(left, #8502f7 0, #000 100%) !important;
+    background: -webkit-gradient(linear, left, right, color-stop(0, #8502f7), color-stop(100%, #8502f7)) !important;
+    background: -webkit-linear-gradient(left, #8502f7 0, #000 100%) !important;
+    background: -o-linear-gradient(left, #8502f7 0, #000 100%) !important;
+    background: -ms-linear-gradient(left, #8502f7 0, #000 100%) !important;
+    background: linear-gradient(to right, #8502f7 0, #000 100%) !important;
+  }
+
+  .text-muted {
+    color: #8502f7 !important;
+  }
+
+  .font-regular {
+    font-weight: 400;
+  }
+
+  .border-radius-none {
+    border-radius: 0;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    background: #000;
+    color: #8502f7;
+  }
+
+  .app {
+    position: relative;
+  }
+
+  .app-wrap {
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .app-container {
+    position: relative;
+  }
+
+  .app-main {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 1 1 0%;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    padding-left: 240px;
+    transition: all .3s ease-out;
+  }
+
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1051;
+    width: 100%;
+  }
+
+  .top-bar .navbar {
+    padding: 0;
+    height: 60px;
+  }
+
+  .top-bar .navbar .mobile-toggle {
+    position: absolute;
+    color: #000;
+    display: none;
+    padding: 20px 30px;
+    top: 0;
+    left: 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .top-bar .navbar .navbar-header {
+    background: #000;
+    width: 240px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    height: 60px;
+    text-align: center;
+    overflow: hidden;
+    transition: all .3s ease-out;
+    position: relative;
+    z-index: 99;
+    padding-left: 1.6rem;
+  }
+
+  .top-bar .navbar .navbar-header .navbar-brand {
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+  }
+
+  .sidebar-nav {
+    background: #212529;
+  }
+
+  .sidebar-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #343a40;
+  }
+
+  .app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    transition: all .3s ease-out;
+    display: block;
+    padding-top: 60px;
+    height: 100%;
+    -webkit-box-shadow: 1px 10px 20px rgba(115, 105, 215, .15);
+    -moz-box-shadow: 1px 10px 20px rgba(115, 105, 215, .15);
+    box-shadow: 1px 10px 20px rgba(115, 105, 215, .15);
+    z-index: 1050;
+  }
+
+  .app-navbar .sidebar-nav {
+    -webkit-flex: 1 1 auto !important;
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+    -ms-flex-preferred-size: auto !important;
+    flex-basis: auto !important;
+    margin-bottom: auto;
+    background: #000;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu {
+    background: 0 0;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li a {
+    border: none !important;
+    padding: .9rem 1.6rem;
+    color: #a2a5bd;
+    display: flex;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li a .nav-title {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.active a {
+    color: #8502f7;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.active ul {
+    position: relative;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.active ul li a {
+    background: 0 0 !important;
+    color: #8502f7;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.active ul li.active a {
+    color: #8502f7 !important;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.active ul li.active a:before {
+    width: 14px;
+    height: 2px;
+    position: absolute;
+    content: '';
+    left: 32px;
+    background: #8502f7;
+    top: 18px;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.active ul:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #8502f7;
+    top: 0;
+    left: 30px;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li ul {
+    background: #000;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li ul li a {
+    padding: .6rem 2rem;
+    padding-left: 3.78rem;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li+li,  .app-navbar .sidebar-nav ul.metismenu li:first-child {
+    margin-top: 0;
+  }
+
+  .app-navbar .sidebar-nav ul.metismenu li.nav-static-title {
+    padding: 1rem 1.6rem .1rem 1.6rem;
+    color: #000;
+    font-size: .8571rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: 600;
+    color: #4c4f6b;
+  }
+}
